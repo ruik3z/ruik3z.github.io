@@ -124,38 +124,73 @@ body {
 }
 
 .typewriter {
-    overflow: hidden;
-    border-right: 2px solid #52ffb8;
-    white-space: nowrap;
-    width: 0;
-    max-width: fit-content;
-    animation:
-        typing 3s steps(90,end) .8s forwards,
-        blink .8s step-end infinite;
+    width: auto;
+    max-width: 780px;
+    white-space: normal;
+    border-right: none;
+    opacity: 0;
+    animation: slideUp .8s ease .3s forwards;
+}
+
+.typewriter::after {
+    content: "_";
+    color: #52ffb8;
+    margin-left: 4px;
+    animation: blink .8s step-end infinite;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 34px;
     margin-top: 34px;
     opacity: 0;
     animation: slideUp .8s ease .45s forwards;
 }
 
 .buttons a {
+    position: relative;
     color: #e8edf2;
     text-decoration: none;
-    padding: 14px 20px;
-    border-radius: 14px;
-    border: 1px solid rgba(160,190,210,0.22);
-    background: rgba(255,255,255,0.045);
+    padding: 0 0 8px 0;
+    font-family: monospace;
+    font-size: 1.02rem;
+    letter-spacing: 1px;
+    background: transparent;
+    border: none;
+    transition: .2s ease;
+}
+
+.buttons a::before {
+    content: ">";
+    color: #52ffb8;
+    margin-right: 8px;
+}
+
+.buttons a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(82,255,184,0.85),
+        rgba(82,255,184,0)
+    );
+    transform: scaleX(0.35);
+    transform-origin: left;
     transition: .2s ease;
 }
 
 .buttons a:hover {
-    transform: translateY(-3px);
-    border-color: rgba(82,255,184,0.55);
+    color: #52ffb8;
+    transform: translateY(-2px);
+}
+
+.buttons a:hover::after {
+    transform: scaleX(1);
 }
 
 .home-image,
@@ -216,19 +251,9 @@ footer {
     }
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
 @keyframes blink {
     50% {
-        border-color: transparent;
+        opacity: 0;
     }
 }
 
@@ -255,14 +280,7 @@ footer {
 
     .buttons {
         flex-wrap: wrap;
-    }
-
-    .typewriter {
-        white-space: normal;
-        width: auto;
-        max-width: 92vw;
-        border-right: none;
-        animation: slideUp .8s ease .3s forwards;
+        gap: 24px;
     }
 
     .hero h1 {
