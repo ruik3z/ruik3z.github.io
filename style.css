@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #0d1117;
+    background: #0b0f14;
     color: #e6edf3;
     font-family: Arial, sans-serif;
     min-height: 100vh;
@@ -13,61 +13,101 @@ body {
 
 nav {
     width: 100%;
-    height: 70px;
-
+    min-height: 72px;
+    padding: 0 42px;
+    background: #111820;
+    border-bottom: 1px solid #26313d;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 40px;
-
-    background: #161b22;
-    border-bottom: 1px solid #30363d;
 }
 
 .logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
 .nav-links {
     list-style: none;
-
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 34px;
 }
 
 .nav-links a {
     color: #e6edf3;
     text-decoration: none;
-
+    font-size: 1rem;
     padding: 10px 14px;
-    border-radius: 8px;
-
+    border-radius: 10px;
     transition: 0.2s ease;
 }
 
 .nav-links a:hover {
-    background: #21262d;
+    background: #1c2632;
 }
 
 main {
-    max-width: 900px;
-
-    margin: 120px auto;
-
+    width: min(900px, 92%);
+    margin: 0 auto;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-
-    padding: 20px;
+    padding: 60px 0;
 }
 
 main h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    margin-bottom: 18px;
+    line-height: 1.1;
 }
 
 main p {
-    font-size: 1.2rem;
-    color: #8b949e;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #9ba7b4;
+    line-height: 1.6;
+}
+
+footer {
+    border-top: 1px solid #26313d;
+    color: #778390;
+    text-align: center;
+    padding: 22px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    nav {
+        padding: 22px 18px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: center;
+        background: #151d27;
+        border: 1px solid #26313d;
+        padding: 12px;
+    }
+
+    main {
+        min-height: calc(100vh - 190px);
+        padding: 50px 0;
+    }
 }
