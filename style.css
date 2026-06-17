@@ -329,22 +329,14 @@ footer {
     transform: translateY(-4px);
 }
 
-.contact-item:first-child:hover img {
-    transform: scale(1.08);
-
+.contact-item:first-child img {
     filter:
-        drop-shadow(0 0 8px rgba(4,164,224,0.7))
-        drop-shadow(0 0 20px rgba(4,164,224,0.5))
-        drop-shadow(0 0 40px rgba(4,164,224,0.35));
+        drop-shadow(0 0 5px rgba(4,164,224,0.35));
 }
 
-.contact-item:last-child:hover img {
-    transform: scale(1.08);
-
+.contact-item:last-child img {
     filter:
-        drop-shadow(0 0 8px rgba(140,156,251,0.7))
-        drop-shadow(0 0 20px rgba(140,156,251,0.5))
-        drop-shadow(0 0 40px rgba(140,156,251,0.35));
+        drop-shadow(0 0 5px rgba(140,156,251,0.35));
 }
 
 @media (max-width: 780px) {
