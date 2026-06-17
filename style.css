@@ -437,3 +437,15 @@ footer {
         gap: 8px;
     }
     }
+
+.nav-links a.active {
+    color: #52ffb8;
+}
+
+.nav-links a.active::after {
+    transform: scaleX(1);
+
+    box-shadow:
+        0 0 6px rgba(82,255,184,0.5),
+        0 0 16px rgba(82,255,184,0.25);
+}
