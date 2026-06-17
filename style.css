@@ -449,3 +449,39 @@ footer {
         0 0 6px rgba(82,255,184,0.5),
         0 0 16px rgba(82,255,184,0.25);
 }
+
+.system-card {
+    margin-top: 25px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid rgba(82,255,184,0.12);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    text-align: left;
+
+    max-width: 760px;
+
+    width: 100%;
+
+    opacity: 0;
+
+    animation: slideUp .8s ease .2s forwards;
+}
+
+.system-card pre {
+    color: #b9c4cf;
+
+    font-family: monospace;
+
+    font-size: clamp(.88rem, 2vw, 1rem);
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
