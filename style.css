@@ -513,3 +513,33 @@ footer {
 .contact-mail a:hover {
     color: #ffffff;
 }
+
+/* Contact page final fixes */
+
+.contact-page h1 {
+    font-size: clamp(4rem, 8vw, 6.4rem);
+}
+
+.contact-item:nth-of-type(2) img {
+    filter:
+        drop-shadow(0 0 5px rgba(140,156,251,0.35));
+}
+
+.contact-item:nth-of-type(2):hover {
+    color: #8c9cfb;
+}
+
+.contact-item:nth-of-type(2):hover img {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(0 0 8px rgba(140,156,251,0.75))
+        drop-shadow(0 0 22px rgba(140,156,251,0.55))
+        drop-shadow(0 0 46px rgba(140,156,251,0.38));
+}
+
+@media (max-width: 780px) {
+    .contact-page h1 {
+        font-size: clamp(4rem, 11vw, 8.5rem);
+    }
+}
