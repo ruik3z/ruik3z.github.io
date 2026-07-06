@@ -572,3 +572,517 @@ footer {
     margin-top: 34px;
     margin-bottom: 0;
 }
+
+/* =========================================================
+   GLITCH 404 BLOG PAGE
+   ========================================================= */
+
+.error-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(82, 255, 184, 0.06),
+            transparent 35%
+        ),
+        #020508;
+
+    overflow-x: hidden;
+}
+
+.error-shell {
+    position: relative;
+    z-index: 3;
+
+    width: min(900px, 92%);
+    min-height: calc(100vh - 140px);
+
+    margin: 0 auto;
+    padding: 70px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-family: monospace;
+
+    animation: errorScreenShift 7s infinite;
+}
+
+.error-terminal {
+    color: #52ffb8;
+
+    font-size: 1rem;
+
+    margin-bottom: 15px;
+
+    opacity: 0;
+
+    animation:
+        slideUp .7s ease forwards,
+        terminalFlicker 4s infinite;
+}
+
+
+/* =========================
+   MAIN 404
+   ========================= */
+
+.glitch-wrapper {
+    position: relative;
+}
+
+.glitch-404 {
+    position: relative;
+
+    color: #e8edf2;
+
+    font-family: Arial, sans-serif;
+    font-size: clamp(8rem, 25vw, 18rem);
+    font-weight: 900;
+
+    line-height: .8;
+    letter-spacing: -14px;
+
+    margin: 20px 0 35px;
+
+    animation:
+        mainGlitch 2.5s infinite,
+        errorFlicker 5s infinite;
+}
+
+
+/* RED GLITCH COPY */
+
+.glitch-404::before {
+    content: attr(data-text);
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: #ff2957;
+
+    opacity: .7;
+
+    overflow: hidden;
+
+    clip-path: inset(15% 0 65% 0);
+
+    transform: translate(-6px, 0);
+
+    animation: glitchRed 1.7s infinite linear alternate-reverse;
+}
+
+
+/* GREEN GLITCH COPY */
+
+.glitch-404::after {
+    content: attr(data-text);
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: #52ffb8;
+
+    opacity: .7;
+
+    overflow: hidden;
+
+    clip-path: inset(65% 0 10% 0);
+
+    transform: translate(6px, 0);
+
+    animation: glitchGreen 1.3s infinite linear alternate-reverse;
+}
+
+
+/* =========================
+   ERROR TEXT
+   ========================= */
+
+.error-title {
+    color: #ff4267;
+
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+
+    animation: errorTextGlitch 3s infinite;
+}
+
+
+.error-output {
+    width: min(560px, 100%);
+
+    text-align: left;
+
+    color: #6f7b86;
+
+    font-size: clamp(.8rem, 2vw, .95rem);
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+    opacity: .8;
+}
+
+
+.error-output p:nth-child(1) {
+    animation: terminalFlicker 2.1s infinite;
+}
+
+.error-output p:nth-child(2) {
+    animation: terminalFlicker 3.3s infinite;
+}
+
+.error-output p:nth-child(3) {
+    animation: terminalFlicker 1.7s infinite;
+}
+
+.error-output p:nth-child(4) {
+    color: #ff4267;
+
+    animation: terminalFlicker 2.7s infinite;
+}
+
+
+.error-message {
+    color: #91a0ae;
+
+    font-size: 1rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   RETURN LINK
+   ========================= */
+
+.error-return {
+    position: relative;
+
+    color: #52ffb8;
+
+    text-decoration: none;
+
+    padding-bottom: 7px;
+
+    transition: .2s ease;
+}
+
+
+.error-return::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #52ffb8;
+
+    transform: scaleX(.25);
+    transform-origin: left;
+
+    transition: .25s ease;
+}
+
+
+.error-return:hover {
+    color: white;
+
+    text-shadow:
+        0 0 8px rgba(82,255,184,.8),
+        0 0 20px rgba(82,255,184,.5);
+}
+
+
+.error-return:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================
+   SCANLINES
+   ========================= */
+
+.error-scanlines {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    opacity: .12;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(255,255,255,.08) 3px,
+            transparent 4px
+        );
+
+    animation: scanlineMovement 8s linear infinite;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes mainGlitch {
+
+    0%,
+    88%,
+    100% {
+        transform: translate(0);
+    }
+
+    89% {
+        transform: translate(-5px, 2px);
+    }
+
+    90% {
+        transform: translate(7px, -3px);
+    }
+
+    91% {
+        transform: translate(-3px, 4px);
+    }
+
+    92% {
+        transform: translate(0);
+    }
+}
+
+
+@keyframes glitchRed {
+
+    0% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-7px, 0);
+    }
+
+    25% {
+        clip-path: inset(60% 0 15% 0);
+        transform: translate(8px, 0);
+    }
+
+    50% {
+        clip-path: inset(30% 0 45% 0);
+        transform: translate(-4px, 0);
+    }
+
+    75% {
+        clip-path: inset(75% 0 5% 0);
+        transform: translate(6px, 0);
+    }
+
+    100% {
+        clip-path: inset(20% 0 60% 0);
+        transform: translate(-8px, 0);
+    }
+}
+
+
+@keyframes glitchGreen {
+
+    0% {
+        clip-path: inset(70% 0 10% 0);
+        transform: translate(6px, 0);
+    }
+
+    25% {
+        clip-path: inset(15% 0 65% 0);
+        transform: translate(-7px, 0);
+    }
+
+    50% {
+        clip-path: inset(50% 0 25% 0);
+        transform: translate(8px, 0);
+    }
+
+    75% {
+        clip-path: inset(5% 0 80% 0);
+        transform: translate(-5px, 0);
+    }
+
+    100% {
+        clip-path: inset(65% 0 15% 0);
+        transform: translate(7px, 0);
+    }
+}
+
+
+@keyframes errorTextGlitch {
+
+    0%,
+    92%,
+    100% {
+        transform: translate(0);
+        text-shadow: none;
+    }
+
+    93% {
+        transform: translate(-3px, 0);
+
+        text-shadow:
+            4px 0 #52ffb8,
+            -4px 0 #ff2957;
+    }
+
+    95% {
+        transform: translate(4px, 0);
+    }
+
+    97% {
+        transform: translate(-2px, 0);
+    }
+}
+
+
+@keyframes terminalFlicker {
+
+    0%,
+    96%,
+    100% {
+        opacity: .8;
+    }
+
+    97% {
+        opacity: .2;
+    }
+
+    98% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: .4;
+    }
+}
+
+
+@keyframes errorFlicker {
+
+    0%,
+    95%,
+    100% {
+        opacity: 1;
+    }
+
+    96% {
+        opacity: .65;
+    }
+
+    97% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: .35;
+    }
+
+    99% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes errorScreenShift {
+
+    0%,
+    94%,
+    100% {
+        transform: translateX(0);
+    }
+
+    95% {
+        transform: translateX(-2px);
+    }
+
+    96% {
+        transform: translateX(3px);
+    }
+
+    97% {
+        transform: translateX(-1px);
+    }
+}
+
+
+@keyframes scanlineMovement {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 100px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 780px) {
+
+    .error-shell {
+        min-height: calc(100vh - 150px);
+
+        padding: 50px 0;
+    }
+
+    .glitch-404 {
+        font-size: clamp(7rem, 38vw, 11rem);
+
+        letter-spacing: -9px;
+
+        margin: 15px 0 30px;
+    }
+
+    .error-title {
+        letter-spacing: 1px;
+    }
+
+    .error-output {
+        width: min(440px, 92%);
+
+        font-size: .78rem;
+    }
+}
+
+
+/* =========================
+   LANDSCAPE
+   ========================= */
+
+@media (orientation: landscape) {
+
+    .glitch-404 {
+        font-size: clamp(7rem, 14vw, 11rem);
+    }
+}
