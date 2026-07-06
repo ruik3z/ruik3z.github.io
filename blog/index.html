@@ -6,11 +6,9 @@
     <title>404 | Ruikez</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-
-<body class="error-page">
+<body class="glitch-body">
 
     <div class="noise"></div>
-    <div class="error-scanlines"></div>
 
     <nav class="navbar">
         <a href="/" class="logo">RUIKEZ</a>
@@ -23,35 +21,21 @@
         </div>
     </nav>
 
-    <main class="error-shell">
+    <main class="glitch-page">
+        <p class="terminal-line">root@ruikez:~$ cat /blog/archive</p>
 
-        <div class="error-terminal">
-            root@ruikez:~$ ./blog
+        <h1 class="glitch-title" data-text="404">404</h1>
+
+        <p class="glitch-subtitle">ARCHIVE_CORRUPTED</p>
+
+        <div class="glitch-box">
+            <p>[FAIL] /blog could not be mounted</p>
+            <p>[WARN] missing entries detected</p>
+            <p>[ERROR] transmission aborted</p>
+            <p>[INFO] return to safety recommended</p>
         </div>
 
-        <div class="glitch-wrapper">
-            <h1 class="glitch-404" data-text="404">404</h1>
-        </div>
-
-        <p class="error-title">
-            FATAL: ARCHIVE_NOT_FOUND
-        </p>
-
-        <div class="error-output">
-            <p>[ERROR] Failed to mount /blog</p>
-            <p>[ERROR] Archive returned status 404</p>
-            <p>[WARN]&nbsp; Data integrity unknown</p>
-            <p>[FAIL]&nbsp; Transmission terminated</p>
-        </div>
-
-        <p class="error-message">
-            The requested archive does not exist.
-        </p>
-
-        <a href="/" class="error-return">
-            &gt; return /home/ruikez
-        </a>
-
+        <a class="error-return" href="/">> return /home/ruikez</a>
     </main>
 
     <footer>
