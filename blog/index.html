@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Ruikez</title>
+    <title>404 | Ruikez</title>
     <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+
+<body class="error-page">
 
     <div class="noise"></div>
+    <div class="error-scanlines"></div>
 
     <nav class="navbar">
         <a href="/" class="logo">RUIKEZ</a>
@@ -21,32 +23,34 @@
         </div>
     </nav>
 
-    <main class="blog-shell">
+    <main class="error-shell">
 
-        <article class="post">
-            <header class="post-header">
-                <h2 class="post-title">Ruikez.com Is Alive</h2>
-                <time class="post-date">2026-06-16</time>
-            </header>
+        <div class="error-terminal">
+            root@ruikez:~$ ./blog
+        </div>
 
-            <p class="post-text">
-                Well, it works. Got this site all up and functioning. My brain isn't. it's about 5:05 AM and my eyes may be giving 
-                in at any moment. Anyways, I won't keep on talking willy-nilly, the mattress awaits. I should be able to 
-                cover a crazy Japanese horrific situation when my brain permits it. Signing off the internet.
-            </p>
-        </article>
+        <div class="glitch-wrapper">
+            <h1 class="glitch-404" data-text="404">404</h1>
+        </div>
 
-        <article class="post">
-            <header class="post-header">
-                <h2 class="post-title">First Transmission</h2>
-                <time class="post-date">2026-06-16</time>
-            </header>
+        <p class="error-title">
+            FATAL: ARCHIVE_NOT_FOUND
+        </p>
 
-            <p class="post-text">
-                "Testing"... "Testing"... "Testing".. perhaps if I say it the fourth time then maybe it'll end up working, right? 
-                Repitition and consistency breed results after all. Im just testing this blog page. Hope it works.
-            </p>
-        </article>
+        <div class="error-output">
+            <p>[ERROR] Failed to mount /blog</p>
+            <p>[ERROR] Archive returned status 404</p>
+            <p>[WARN]&nbsp; Data integrity unknown</p>
+            <p>[FAIL]&nbsp; Transmission terminated</p>
+        </div>
+
+        <p class="error-message">
+            The requested archive does not exist.
+        </p>
+
+        <a href="/" class="error-return">
+            &gt; return /home/ruikez
+        </a>
 
     </main>
 
