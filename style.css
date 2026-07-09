@@ -752,3 +752,56 @@ footer {
         padding: 18px;
     }
 }
+
+.error-page,
+.glitch-body {
+    background:
+        radial-gradient(circle at 70% 20%, rgba(20, 80, 75, 0.22), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(20, 40, 70, 0.25), transparent 35%),
+        #05080c;
+}
+
+.error-return {
+    position: relative;
+    color: #e8edf2;
+    text-decoration: none;
+    padding: 0 0 8px 0;
+    font-family: monospace;
+    font-size: 1.02rem;
+    letter-spacing: 1px;
+    background: transparent;
+    border: none;
+    transition: .2s ease;
+}
+
+.error-return::before {
+    content: ">";
+    color: #52ffb8;
+    margin-right: 8px;
+}
+
+.error-return::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        rgba(82,255,184,0.85),
+        rgba(82,255,184,0)
+    );
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: .2s ease;
+}
+
+.error-return:hover {
+    color: #52ffb8;
+    transform: translateY(-2px);
+}
+
+.error-return:hover::after {
+    transform: scaleX(1);
+}
