@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Blog | Ruikez</title>
+
     <link rel="stylesheet" href="/style.css">
 </head>
 
@@ -12,6 +14,7 @@
     <div class="noise"></div>
 
     <nav class="navbar">
+
         <a href="/" class="logo">RUIKEZ</a>
 
         <div class="nav-links">
@@ -20,7 +23,9 @@
             <a href="/about/">About</a>
             <a href="/contact/">Contact</a>
         </div>
+
     </nav>
+
 
     <main class="blog-page">
 
@@ -28,62 +33,141 @@
             root@ruikez:~$ ls /blog/archive
         </p>
 
+
         <section class="blog-archive">
 
-            <details class="blog-card">
 
-                <summary class="blog-summary">
+            <!-- =========================
+                 BLOG POST
+                 ========================= -->
+
+            <article class="blog-card">
+
+                <button class="blog-summary" type="button">
 
                     <span class="blog-title">
                         TEST_BLOG_title
                     </span>
 
-                    <time class="blog-date">
-                        2026-08-20
-                    </time>
+                    <span class="blog-summary-right">
 
-                </summary>
+                        <time class="blog-date">
+                            2026-08-20
+                        </time>
 
-                <div class="blog-content">
+                        <span class="blog-toggle">
+                            +
+                        </span>
 
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer vitae justo eget magna fermentum iaculis. Sed
-                        vulputate odio ut enim blandit, vel tincidunt justo
-                        tincidunt.
-                    </p>
+                    </span>
 
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl
-                        consectetur et. Donec ullamcorper nulla non metus auctor
-                        fringilla. Vestibulum id ligula porta felis euismod
-                        semper.
-                    </p>
+                </button>
 
-                    <p>
-                        Curabitur blandit tempus porttitor. Maecenas faucibus
-                        mollis interdum. Nulla vitae elit libero, a pharetra
-                        augue. Aenean lacinia bibendum nulla sed consectetur.
-                    </p>
 
-                    <p>
-                        Cras mattis consectetur purus sit amet fermentum.
-                        Pellentesque ornare sem lacinia quam venenatis
-                        vestibulum. Duis mollis, est non commodo luctus, nisi
-                        erat porttitor ligula.
-                    </p>
+                <div class="blog-content-wrap">
+
+                    <div class="blog-content">
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Integer vitae justo eget magna fermentum iaculis.
+                            Sed vulputate odio ut enim blandit, vel tincidunt
+                            justo tincidunt.
+                        </p>
+
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur et. Donec ullamcorper nulla non metus
+                            auctor fringilla. Vestibulum id ligula porta felis
+                            euismod semper.
+                        </p>
+
+                        <p>
+                            Curabitur blandit tempus porttitor. Maecenas faucibus
+                            mollis interdum. Nulla vitae elit libero, a pharetra
+                            augue. Aenean lacinia bibendum nulla sed consectetur.
+                        </p>
+
+                        <p>
+                            Cras mattis consectetur purus sit amet fermentum.
+                            Pellentesque ornare sem lacinia quam venenatis
+                            vestibulum. Duis mollis, est non commodo luctus,
+                            nisi erat porttitor ligula.
+                        </p>
+
+                    </div>
 
                 </div>
 
-            </details>
+            </article>
+
 
         </section>
 
     </main>
 
+
     <footer>
         Ruikez © 2026
     </footer>
+
+
+    <script>
+
+        document.querySelectorAll(".blog-card").forEach((card) => {
+
+            const button = card.querySelector(".blog-summary");
+            const wrapper = card.querySelector(".blog-content-wrap");
+
+            button.addEventListener("click", () => {
+
+                const isOpen = card.classList.contains("open");
+
+
+                if (!isOpen) {
+
+                    card.classList.add("open");
+
+                    wrapper.style.height =
+                        wrapper.scrollHeight + "px";
+
+
+                    wrapper.addEventListener(
+                        "transitionend",
+                        function finishedOpening(event) {
+
+                            if (event.propertyName !== "height") {
+                                return;
+                            }
+
+                            wrapper.style.height = "auto";
+
+                            wrapper.removeEventListener(
+                                "transitionend",
+                                finishedOpening
+                            );
+
+                        }
+                    );
+
+                } else {
+
+                    wrapper.style.height =
+                        wrapper.scrollHeight + "px";
+
+                    wrapper.offsetHeight;
+
+                    wrapper.style.height = "0px";
+
+                    card.classList.remove("open");
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
