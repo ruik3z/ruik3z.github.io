@@ -550,22 +550,6 @@ button.social-entry {
 }
 
 
-/* Spotify */
-
-.spotify-entry:hover {
-    color: #1ed760;
-    border-color: rgba(30,215,96,.25);
-}
-
-.spotify-entry:hover .social-icon {
-    transform: scale(1.08);
-
-    filter:
-        drop-shadow(0 0 9px rgba(30,215,96,.72))
-        drop-shadow(0 0 24px rgba(30,215,96,.40));
-}
-
-
 /* Roblox */
 
 .roblox-section {
