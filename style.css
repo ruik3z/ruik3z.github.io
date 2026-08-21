@@ -497,6 +497,25 @@ body {
         );
 }
 
+/* Remove baked-in side bars from homepage video */
+
+.home-image {
+    width: min(550px, 92vw);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-image video {
+    width: 100%;
+    height: auto;
+
+    transform: scale(1.12);
+    transform-origin: center;
+
+    object-fit: cover;
+}
+
 
 /* =========================
    CONTACT
@@ -1805,12 +1824,19 @@ and
             24px;
     }
 
-    .home-image img,
-    .home-image video,
-    .about-image img {
-        width:
-            min(380px,90vw);
-    }
+    .home-image {
+    width: min(380px, 90vw);
+}
+
+.home-image img,
+.about-image img {
+    width: min(380px, 90vw);
+}
+
+.home-image video {
+    width: 100%;
+    transform: scale(1.12);
+}
 
     .social-entry {
         padding:
