@@ -57,14 +57,30 @@
 
 html {
     scroll-behavior: smooth;
+
+    min-height: 100%;
+    min-height: 100dvh;
+
+    background: #050609;
+
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
 }
 
 body {
     position: relative;
 
+    width: 100%;
+
     min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0;
 
     overflow-x: hidden;
+
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
 
     color: var(--silver);
 
@@ -87,6 +103,8 @@ body {
             #07080c 46%,
             #040507 100%
         );
+
+    background-attachment: fixed;
 
     animation:
         bodyExposureFailure 11s steps(1,end) infinite;
@@ -425,8 +443,7 @@ body::after {
 
     width: min(1180px,92%);
 
-    min-height:
-        calc(100vh - 140px);
+    min-height: auto;
 
     margin: 0 auto;
 
@@ -1833,8 +1850,7 @@ button.social-entry {
     width:
         min(900px,92%);
 
-    min-height:
-        calc(100vh - 140px);
+    min-height: auto;
 
     margin:
         0 auto;
@@ -2197,7 +2213,12 @@ footer {
 
     z-index: 3;
 
-    padding: 24px;
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        38px 24px 34px;
 
     color: #676c75;
 
@@ -2209,8 +2230,20 @@ footer {
 
     text-align: center;
 
+    border-top: none;
+
+    background: transparent;
+
     animation:
         footerSignal 8s steps(1,end) infinite;
+}
+
+body > footer:last-child {
+    margin-bottom: 0;
+}
+
+body > *:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -3522,8 +3555,7 @@ and
     }
 
     .hero {
-        min-height:
-            calc(100vh - 150px);
+        min-height: auto;
 
         gap: 38px;
 
@@ -3716,4 +3748,4 @@ and
 
         transition-duration: .01ms !important;
     }
-    }
+   }
