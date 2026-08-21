@@ -155,7 +155,7 @@ body {
 /* New terminal-style Home + Contact titles */
 
 .hero .terminal-heading {
-    font-family: monospace;
+    font-family: Arial, sans-serif;
     font-size: clamp(2.7rem, 7vw, 5rem);
     line-height: 1;
     letter-spacing: -.06em;
