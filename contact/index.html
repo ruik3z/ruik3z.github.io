@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me | Ruikez</title>
+    <title>Contact | Ruikez</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
 
     <div class="noise"></div>
@@ -24,30 +25,186 @@
     <main class="hero hero-centered contact-page">
 
         <section class="hero-text">
-            <p class="terminal-line">root@ruikez:~$ ./contact</p>
 
-            <h1>Contact</h1>
+            <p class="terminal-line">
+                root@ruikez:~$ ./contact
+            </p>
+
+            <h1 class="terminal-heading">
+                <span class="heading-prefix">./</span>CONTACT
+            </h1>
 
             <p class="subtitle">
                 Direct ways to hit me up.
             </p>
+
         </section>
 
-        <section class="contact-links">
 
-            <a class="contact-item" href="https://t.me/ruikez" target="_blank">
-                <img src="/assets/telegram.webp" alt="Telegram">
-                <span>Telegram</span>
+        <section class="contact-directory">
+
+
+            <a class="social-entry telegram-entry"
+               href="https://t.me/ruikez"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img
+                    class="social-icon"
+                    src="/assets/telegram.webp"
+                    alt="Telegram"
+                >
+
+                <div class="social-copy">
+                    <span class="social-name">Telegram</span>
+                    <span class="social-note">@ruikez</span>
+                </div>
+
             </a>
 
-            <a class="contact-item" href="https://discord.com/users/548619868321349632" target="_blank">
-                <img src="/assets/discord.webp" alt="Discord">
-                <span>Discord</span>
+
+            <div class="discord-shell">
+
+                <button
+                    class="social-entry discord-entry"
+                    id="discord-trigger"
+                    type="button"
+                >
+
+                    <img
+                        class="social-icon"
+                        src="/assets/discord.webp"
+                        alt="Discord"
+                    >
+
+                    <div class="social-copy">
+                        <span class="social-name">Discord</span>
+                        <span class="social-note">click to reveal username</span>
+                    </div>
+
+                </button>
+
+                <div
+                    class="discord-terminal"
+                    id="discord-terminal"
+                    aria-live="polite"
+                >
+                    <span class="discord-prompt">$</span>
+                    <span id="discord-typed"></span>
+                    <span class="discord-cursor">_</span>
+                </div>
+
+            </div>
+
+
+            <a class="social-entry reddit-entry"
+               href="YOUR_REDDIT_URL"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img
+                    class="social-icon"
+                    src="/assets/reddit.webp"
+                    alt="Reddit"
+                >
+
+                <div class="social-copy">
+                    <span class="social-name">Reddit</span>
+                    <span class="social-note">profile</span>
+                </div>
+
             </a>
+
+
+            <a class="social-entry youtube-entry"
+               href="YOUR_YOUTUBE_URL"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img
+                    class="social-icon"
+                    src="/assets/youtube.webp"
+                    alt="YouTube"
+                >
+
+                <div class="social-copy">
+                    <span class="social-name">YouTube</span>
+                    <span class="social-note">channel</span>
+                </div>
+
+            </a>
+
+
+            <a class="social-entry spotify-entry"
+               href="YOUR_SPOTIFY_URL"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img
+                    class="social-icon"
+                    src="/assets/spotify.webp"
+                    alt="Spotify"
+                >
+
+                <div class="social-copy">
+                    <span class="social-name">Spotify</span>
+                    <span class="social-note">profile</span>
+                </div>
+
+            </a>
+
+
+            <section class="roblox-section">
+
+                <p class="roblox-terminal">
+                    root@ruikez:~$ cat legacy/roblox.txt
+                </p>
+
+                <div class="roblox-thumbnail-wrap">
+
+                    <img
+                        class="roblox-thumbnail social-icon"
+                        src="/assets/roblox-dating.webp"
+                        alt=""
+                    >
+
+                </div>
+
+                <p class="roblox-ignore">
+                    ignore the thumbnail up top.
+                </p>
+
+                <a class="roblox-profile"
+                   href="YOUR_ROBLOX_PROFILE_URL"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img
+                        class="roblox-icon social-icon"
+                        src="/assets/roblox.webp"
+                        alt="Roblox"
+                    >
+
+                    <span>UKME on Roblox</span>
+
+                </a>
+
+                <p class="roblox-note">
+                    I've quit permanently. If you actually want to play with me,
+                    though, ask. I'm usually down to make time for it.
+                </p>
+
+            </section>
+
 
             <div class="contact-mail">
+
                 <span>Contact me through Mail:</span>
-                <a href="mailto:admin@ruikez.com">admin@ruikez.com</a>
+
+                <a href="mailto:admin@ruikez.com">
+                    admin@ruikez.com
+                </a>
+
             </div>
 
         </section>
@@ -57,6 +214,103 @@
     <footer>
         Ruikez © 2026
     </footer>
+
+
+    <script>
+
+        const discordTrigger =
+            document.getElementById("discord-trigger");
+
+        const discordTerminal =
+            document.getElementById("discord-terminal");
+
+        const discordTyped =
+            document.getElementById("discord-typed");
+
+
+        const discordMessage =
+            "my username is Ruikez on Discord — add me up.";
+
+
+        let discordBusy = false;
+
+
+        function typeDiscordMessage() {
+
+            let index = 0;
+
+            discordTyped.textContent = "";
+
+            const timer = setInterval(() => {
+
+                discordTyped.textContent +=
+                    discordMessage.charAt(index);
+
+                index++;
+
+                if (index >= discordMessage.length) {
+
+                    clearInterval(timer);
+
+                    setTimeout(() => {
+
+                        discordTerminal.classList.remove("visible");
+
+                        setTimeout(() => {
+
+                            discordTrigger.classList.remove("hidden");
+                            discordTrigger.classList.add("roll-back");
+
+                            setTimeout(() => {
+
+                                discordTrigger.classList.remove("roll-back");
+                                discordBusy = false;
+
+                            }, 650);
+
+                        }, 250);
+
+                    }, 5000);
+
+                }
+
+            }, 42);
+
+        }
+
+
+        discordTrigger.addEventListener("click", () => {
+
+            if (discordBusy) {
+                return;
+            }
+
+            discordBusy = true;
+
+            discordTrigger.classList.add("hidden");
+
+            setTimeout(() => {
+
+                discordTerminal.classList.add("visible");
+
+                typeDiscordMessage();
+
+            }, 250);
+
+        });
+
+
+        document
+            .querySelectorAll(".social-icon")
+            .forEach((image) => {
+
+                image.addEventListener("error", () => {
+                    image.classList.add("asset-missing");
+                });
+
+            });
+
+    </script>
 
 </body>
 </html>
