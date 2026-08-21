@@ -675,7 +675,7 @@ body::after {
     height: auto;
 
     transform:
-        scale(1.12);
+        scale(1.18);
 
     transform-origin:
         center;
@@ -2398,7 +2398,7 @@ and
             100%;
 
         transform:
-            scale(1.12);
+            scale(1.18);
     }
 
     .social-entry {
