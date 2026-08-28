@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Blog | Ruikez</title>
 
-    <link rel="stylesheet" href="/style.css">
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
 </head>
 
 <body>
 
     <div class="noise"></div>
 
+
     <nav class="navbar">
 
-        <a href="/" class="logo">RUIKEZ</a>
+        <a
+            href="/"
+            class="logo"
+        >
+            RUIKEZ
+        </a>
+
 
         <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/blog/" class="active">Blog</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a
+                href="/blog/"
+                class="active"
+            >
+                Blog
+            </a>
+
+            <a href="/rant/">
+                Rant
+            </a>
+
+            <a href="/about/">
+                About
+            </a>
+
+            <a href="/contact/">
+                Contact
+            </a>
+
         </div>
 
     </nav>
@@ -37,17 +72,25 @@
         <section class="blog-archive">
 
 
-            <!-- =========================
-                 BLOG POST
-                 ========================= -->
+            <!-- =====================================================
+                 BLOG POST TEMPLATE
+
+                 COPY AN ENTIRE <article class="blog-card">
+                 TO CREATE ANOTHER BLOG POST.
+                 ===================================================== -->
+
 
             <article class="blog-card">
 
-                <button class="blog-summary" type="button">
+                <button
+                    class="blog-summary"
+                    type="button"
+                >
 
                     <span class="blog-title">
-                         Blog Page Update
+                        Blog Page Update
                     </span>
+
 
                     <span class="blog-summary-right">
 
@@ -70,7 +113,8 @@
 
                         <p>
                             Still under construction lmao. Ignore all the latin
-                            microslop powerpoint template text below </p>
+                            microslop powerpoint template text below
+                        </p>
 
                         <p>
                             Praesent commodo cursus magna, vel scelerisque nisl
@@ -83,7 +127,7 @@
                             Curabitur blandit tempus porttitor. Maecenas faucibus
                             mollis interdum. Nulla vitae elit libero, a pharetra
                             augue. Aenean lacinia bibendum nulla sed consectetur.
-                      </p>
+                        </p>
 
                         <p>
                             Cras mattis consectetur purus sit amet fermentum.
@@ -111,58 +155,67 @@
 
     <script>
 
-        document.querySelectorAll(".blog-card").forEach((card) => {
+        document
+            .querySelectorAll(".blog-card")
+            .forEach((card) => {
 
-            const button = card.querySelector(".blog-summary");
-            const wrapper = card.querySelector(".blog-content-wrap");
+                const button =
+                    card.querySelector(".blog-summary");
 
-            button.addEventListener("click", () => {
-
-                const isOpen = card.classList.contains("open");
-
-
-                if (!isOpen) {
-
-                    card.classList.add("open");
-
-                    wrapper.style.height =
-                        wrapper.scrollHeight + "px";
+                const wrapper =
+                    card.querySelector(".blog-content-wrap");
 
 
-                    wrapper.addEventListener(
-                        "transitionend",
-                        function finishedOpening(event) {
+                button.addEventListener("click", () => {
 
-                            if (event.propertyName !== "height") {
-                                return;
+                    const isOpen =
+                        card.classList.contains("open");
+
+
+                    if (!isOpen) {
+
+                        card.classList.add("open");
+
+                        wrapper.style.height =
+                            wrapper.scrollHeight + "px";
+
+
+                        wrapper.addEventListener(
+                            "transitionend",
+                            function finishedOpening(event) {
+
+                                if (event.propertyName !== "height") {
+                                    return;
+                                }
+
+                                wrapper.style.height =
+                                    "auto";
+
+                                wrapper.removeEventListener(
+                                    "transitionend",
+                                    finishedOpening
+                                );
+
                             }
+                        );
 
-                            wrapper.style.height = "auto";
+                    } else {
 
-                            wrapper.removeEventListener(
-                                "transitionend",
-                                finishedOpening
-                            );
+                        wrapper.style.height =
+                            wrapper.scrollHeight + "px";
 
-                        }
-                    );
+                        wrapper.offsetHeight;
 
-                } else {
+                        wrapper.style.height =
+                            "0px";
 
-                    wrapper.style.height =
-                        wrapper.scrollHeight + "px";
+                        card.classList.remove("open");
 
-                    wrapper.offsetHeight;
+                    }
 
-                    wrapper.style.height = "0px";
-
-                    card.classList.remove("open");
-
-                }
+                });
 
             });
-
-        });
 
     </script>
 
