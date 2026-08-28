@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Ruikez</title>
-    <link rel="stylesheet" href="/style.css">
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
 </head>
+
 
 <body>
 
     <div class="noise"></div>
 
+
     <nav class="navbar">
-        <a href="/" class="logo">RUIKEZ</a>
+
+        <a
+            href="/"
+            class="logo"
+        >
+            RUIKEZ
+        </a>
+
 
         <div class="nav-links">
-            <a href="/" class="active">Home</a>
-            <a href="/blog/">Blog</a>
-            <a href="/rant/">Rant</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
+
+            <a
+                href="/"
+                class="active"
+            >
+                Home
+            </a>
+
+            <a href="/blog/">
+                Blog
+            </a>
+
+            <a href="/about/">
+                About
+            </a>
+
+            <a href="/contact/">
+                Contact
+            </a>
+
         </div>
+
     </nav>
+
 
     <main class="hero hero-centered">
 
@@ -31,36 +67,279 @@
                 root@ruikez:~$ cd /home/ruikez && ls -la
             </p>
 
+
             <h1 class="terminal-heading">
-                <span class="heading-prefix">~/</span>WELCOME
+
+                <span class="heading-prefix">
+                    ~/
+                </span>
+
+                WELCOME
+
             </h1>
+
 
             <p class="subtitle typewriter">
                 Enter the Ruikez archive. I mostly share my thoughts, builds, and tributes here.
                 Sometimes delving deep into humanity's darkest feats.
             </p>
 
+
             <div class="buttons">
-                <a href="/blog/">Read Blog</a>
-                <a href="/rant/">Rant Channel</a>
-                <a href="/about/">About Me</a>
+
+                <a href="/blog/">
+                    Read Blog
+                </a>
+
+
+                <button
+                    class="channel-open"
+                    id="channel-open"
+                    type="button"
+                >
+                    Channel
+                </button>
+
+
+                <a href="/about/">
+                    About Me
+                </a>
+
             </div>
 
         </section>
 
+
         <section class="home-image">
 
-            <video autoplay muted loop playsinline>
-                <source src="/assets/ruikez-home.mp4" type="video/mp4">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+            >
+
+                <source
+                    src="/assets/ruikez-home.mp4"
+                    type="video/mp4"
+                >
+
             </video>
 
         </section>
 
     </main>
 
+
     <footer>
         Ruikez © 2026
     </footer>
 
+
+
+    <!-- ==========================================================
+         FULLSCREEN CHANNEL
+         ========================================================== -->
+
+
+    <section
+        class="channel-overlay"
+        id="channel-overlay"
+        aria-hidden="true"
+    >
+
+
+        <button
+            class="channel-close"
+            id="channel-close"
+            type="button"
+            aria-label="Close channel"
+        >
+            ×
+        </button>
+
+
+
+        <div class="channel-shell">
+
+
+            <header class="channel-header">
+
+
+                <div class="channel-address">
+
+                    <span class="channel-user">
+                        root@ruikez
+                    </span>
+
+                    <span class="channel-location">
+                        :~/channel
+                    </span>
+
+                </div>
+
+
+                <div class="channel-state">
+                    READ ONLY
+                </div>
+
+
+            </header>
+
+
+
+            <div class="channel-feed">
+
+
+                <!-- ==================================================
+                     NEW CHANNEL POST
+
+                     NEWEST POST GOES DIRECTLY BELOW THIS COMMENT.
+
+                     COPY AN ENTIRE:
+                     <article class="channel-post">
+                     ...
+                     </article>
+
+                     AND CHANGE THE TIME + TEXT.
+                     ================================================== -->
+
+
+                <article class="channel-post">
+
+                    <time class="channel-time">
+                        28 AUG 2026 · 06:12
+                    </time>
+
+                    <p class="channel-text">
+                        channel is alive.
+                    </p>
+
+                </article>
+
+
+
+                <article class="channel-post">
+
+                    <time class="channel-time">
+                        28 AUG 2026 · 06:07
+                    </time>
+
+                    <p class="channel-text">
+                        random thoughts, life updates, obscure shit and whatever else i feel like putting here.
+                    </p>
+
+                </article>
+
+
+
+                <article class="channel-post">
+
+                    <time class="channel-time">
+                        28 AUG 2026 · 05:58
+                    </time>
+
+                    <p class="channel-text">
+                        images and gifs are coming later.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+
+
+            <footer class="channel-terminal">
+
+                <span>
+                    guest@ruikez:~$
+                </span>
+
+                <span class="channel-terminal-cursor">
+                    _
+                </span>
+
+            </footer>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <script>
+
+        const channelOpen =
+            document.getElementById("channel-open");
+
+        const channelClose =
+            document.getElementById("channel-close");
+
+        const channelOverlay =
+            document.getElementById("channel-overlay");
+
+
+        function openChannel() {
+
+            channelOverlay.classList.add("open");
+
+            channelOverlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "channel-active"
+            );
+
+        }
+
+
+        function closeChannel() {
+
+            channelOverlay.classList.remove("open");
+
+            channelOverlay.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "channel-active"
+            );
+
+        }
+
+
+        channelOpen.addEventListener(
+            "click",
+            openChannel
+        );
+
+
+        channelClose.addEventListener(
+            "click",
+            closeChannel
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (event.key === "Escape") {
+                    closeChannel();
+                }
+
+            }
+        );
+
+    </script>
+
+
 </body>
+
 </html>
