@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,7 +16,9 @@
         rel="stylesheet"
         href="/style.css"
     >
+
 </head>
+
 
 <body>
 
@@ -45,10 +48,6 @@
                 Blog
             </a>
 
-            <a href="/rant/">
-                Rant
-            </a>
-
             <a href="/about/">
                 About
             </a>
@@ -70,14 +69,6 @@
 
 
         <section class="blog-archive">
-
-
-            <!-- =====================================================
-                 BLOG POST TEMPLATE
-
-                 COPY AN ENTIRE <article class="blog-card">
-                 TO CREATE ANOTHER BLOG POST.
-                 ===================================================== -->
 
 
             <article class="blog-card">
@@ -153,6 +144,7 @@
     </footer>
 
 
+
     <script>
 
         document
@@ -166,58 +158,70 @@
                     card.querySelector(".blog-content-wrap");
 
 
-                button.addEventListener("click", () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    const isOpen =
-                        card.classList.contains("open");
-
-
-                    if (!isOpen) {
-
-                        card.classList.add("open");
-
-                        wrapper.style.height =
-                            wrapper.scrollHeight + "px";
+                        const isOpen =
+                            card.classList.contains("open");
 
 
-                        wrapper.addEventListener(
-                            "transitionend",
-                            function finishedOpening(event) {
+                        if (!isOpen) {
 
-                                if (event.propertyName !== "height") {
-                                    return;
+                            card.classList.add("open");
+
+                            wrapper.style.height =
+                                wrapper.scrollHeight + "px";
+
+
+                            wrapper.addEventListener(
+                                "transitionend",
+                                function finishedOpening(event) {
+
+                                    if (
+                                        event.propertyName !== "height"
+                                    ) {
+                                        return;
+                                    }
+
+
+                                    wrapper.style.height =
+                                        "auto";
+
+
+                                    wrapper.removeEventListener(
+                                        "transitionend",
+                                        finishedOpening
+                                    );
+
                                 }
+                            );
 
-                                wrapper.style.height =
-                                    "auto";
+                        } else {
 
-                                wrapper.removeEventListener(
-                                    "transitionend",
-                                    finishedOpening
-                                );
+                            wrapper.style.height =
+                                wrapper.scrollHeight + "px";
 
-                            }
-                        );
 
-                    } else {
+                            wrapper.offsetHeight;
 
-                        wrapper.style.height =
-                            wrapper.scrollHeight + "px";
 
-                        wrapper.offsetHeight;
+                            wrapper.style.height =
+                                "0px";
 
-                        wrapper.style.height =
-                            "0px";
 
-                        card.classList.remove("open");
+                            card.classList.remove("open");
+
+                        }
 
                     }
-
-                });
+                );
 
             });
 
     </script>
 
+
 </body>
+
 </html>
