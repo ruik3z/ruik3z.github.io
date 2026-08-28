@@ -195,10 +195,32 @@
                         28 AUG 2026 · 06:12
                     </time>
 
-                    <p class="channel-text">channel's up baby i also figured out the gif bs i could post em here now. verh kewl</p>
+                    <p class="channel-text">channel's up baby i also figured out the gif bs i could post em here now. bery kewl</p>
 
                 </article>
 
+                
+
+                
+                <article class="channel-post">
+
+                    <time class="channel-time">
+                        28 AUG 2026 · 07:09
+                    </time>
+
+                    <p class="channel-text">it's half past 3 am and im walking back home and this bloke asks me to call a taxi
+                    for him and i kid you not this mf pulls out some decrepit samsung s7 nightmare edition brick telling me he's got
+                    no juice left. that thing looked like one of those first ever samsung blueprints they ever made while they were
+                    racingit it up with apple in 2011 holy cow. taxi took 35 min to arrive and i just score talk with the dude.
+                    dude brings up fitness and turns out to have the biggest biceps and most shredded abs ive seen on a 40 year old ts mofo doesnt work out and he's lookin like
+                    a charming lick istg late gen x have got to be some of the most diabolical breeds out there. only thing i didnt particularly
+                    like about said bloke is that the he asked literally every passing living creature if they had ciggies. hope he
+                    quits smokin cuz goddamn he honestly has a healthier body than most eighteen year olds out there. to be fair evb
+                    that age in england has some sort of mutation stat that grants them power in some sort of category lmao</p>
+
+                </article>
+
+                
 
                 <!-- ==================================================
                      NEWEST POST GOES DIRECTLY ABOVE THIS COMMENT
@@ -239,7 +261,19 @@
 
     </section>
 
+<div
+    class="channel-image-viewer"
+    id="channel-image-viewer"
+    onclick="closeChannelImage()"
+>
 
+    <img
+        id="channel-image-full"
+        src=""
+        alt=""
+    >
+
+</div>
 
     <script>
 
@@ -330,6 +364,31 @@
 
             }
         );
+function openChannelImage(image) {
+
+    const viewer =
+        document.getElementById("channel-image-viewer");
+
+    const fullImage =
+        document.getElementById("channel-image-full");
+
+    fullImage.src =
+        image.src;
+
+    viewer.classList.add("open");
+
+}
+
+
+function closeChannelImage() {
+
+    const viewer =
+        document.getElementById("channel-image-viewer");
+
+    viewer.classList.remove("open");
+
+}
+        
 
     </script>
 
