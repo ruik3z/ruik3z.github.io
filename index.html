@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ruikez</title>
 
-    <link
-        rel="stylesheet"
-        href="/style.css"
-    >
+    <link rel="stylesheet" href="/style.css">
 </head>
-
 
 <body>
 
@@ -25,35 +16,13 @@
 
     <nav class="navbar">
 
-        <a
-            href="/"
-            class="logo"
-        >
-            RUIKEZ
-        </a>
-
+        <a href="/" class="logo">RUIKEZ</a>
 
         <div class="nav-links">
-
-            <a
-                href="/"
-                class="active"
-            >
-                Home
-            </a>
-
-            <a href="/blog/">
-                Blog
-            </a>
-
-            <a href="/about/">
-                About
-            </a>
-
-            <a href="/contact/">
-                Contact
-            </a>
-
+            <a href="/" class="active">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
         </div>
 
     </nav>
@@ -69,13 +38,7 @@
 
 
             <h1 class="terminal-heading">
-
-                <span class="heading-prefix">
-                    ~/
-                </span>
-
-                WELCOME
-
+                <span class="heading-prefix">~/</span>WELCOME
             </h1>
 
 
@@ -112,12 +75,7 @@
 
         <section class="home-image">
 
-            <video
-                autoplay
-                muted
-                loop
-                playsinline
-            >
+            <video autoplay muted loop playsinline>
 
                 <source
                     src="/assets/ruikez-home.mp4"
@@ -137,10 +95,9 @@
 
 
 
-    <!-- ==========================================================
-         FULLSCREEN CHANNEL
-         ========================================================== -->
-
+    <!-- ============================================================
+         CHANNEL
+         ============================================================ -->
 
     <section
         class="channel-overlay"
@@ -165,7 +122,6 @@
 
             <header class="channel-header">
 
-
                 <div class="channel-address">
 
                     <span class="channel-user">
@@ -183,7 +139,6 @@
                     READ ONLY
                 </div>
 
-
             </header>
 
 
@@ -194,14 +149,10 @@
                 <!-- ==================================================
                      NEW CHANNEL POST
 
-                     NEWEST POST GOES DIRECTLY BELOW THIS COMMENT.
+                     NEWEST POSTS GO FIRST.
 
-                     COPY AN ENTIRE:
-                     <article class="channel-post">
-                     ...
-                     </article>
-
-                     AND CHANGE THE TIME + TEXT.
+                     COPY ONE ENTIRE channel-post ARTICLE
+                     WHEN YOU WANT TO ADD SOMETHING.
                      ================================================== -->
 
 
@@ -250,7 +201,7 @@
 
 
 
-            <footer class="channel-terminal">
+            <div class="channel-terminal">
 
                 <span>
                     guest@ruikez:~$
@@ -260,11 +211,10 @@
                     _
                 </span>
 
-            </footer>
+            </div>
 
 
         </div>
-
 
     </section>
 
@@ -330,7 +280,10 @@
             "keydown",
             (event) => {
 
-                if (event.key === "Escape") {
+                if (
+                    event.key === "Escape" &&
+                    channelOverlay.classList.contains("open")
+                ) {
                     closeChannel();
                 }
 
@@ -341,5 +294,4 @@
 
 
 </body>
-
 </html>
