@@ -45,10 +45,6 @@
                 Blog
             </a>
 
-            <a href="/rant/">
-                Rant
-            </a>
-
             <a href="/about/">
                 About
             </a>
@@ -92,6 +88,7 @@
         </section>
 
 
+
         <section class="contact-directory">
 
 
@@ -122,6 +119,7 @@
                 </div>
 
             </a>
+
 
 
             <div class="discord-shell">
@@ -155,6 +153,7 @@
                 </button>
 
 
+
                 <div
                     class="discord-terminal"
                     id="discord-terminal"
@@ -175,6 +174,7 @@
 
 
             </div>
+
 
 
             <a
@@ -206,6 +206,7 @@
             </a>
 
 
+
             <a
                 class="social-entry youtube-entry"
                 href="https://www.youtube.com/@ruikez"
@@ -233,6 +234,7 @@
                 </div>
 
             </a>
+
 
 
             <section class="roblox-section">
@@ -281,6 +283,7 @@
             </section>
 
 
+
             <div class="contact-mail">
 
                 <span>
@@ -302,6 +305,7 @@
     <footer>
         Ruikez © 2026
     </footer>
+
 
 
     <script>
@@ -330,106 +334,128 @@
             discordTyped.textContent = "";
 
 
-            const timer = setInterval(() => {
+            const timer =
+                setInterval(
+                    () => {
 
-                discordTyped.textContent +=
-                    discordMessage.charAt(index);
+                        discordTyped.textContent +=
+                            discordMessage.charAt(index);
 
-                index++;
-
-
-                if (index >= discordMessage.length) {
-
-                    clearInterval(timer);
+                        index++;
 
 
-                    setTimeout(() => {
+                        if (
+                            index >= discordMessage.length
+                        ) {
 
-                        discordTerminal.classList.remove(
-                            "visible"
-                        );
+                            clearInterval(timer);
 
 
-                        setTimeout(() => {
+                            setTimeout(
+                                () => {
 
-                            discordTrigger.classList.remove(
-                                "hidden"
+                                    discordTerminal.classList.remove(
+                                        "visible"
+                                    );
+
+
+                                    setTimeout(
+                                        () => {
+
+                                            discordTrigger.classList.remove(
+                                                "hidden"
+                                            );
+
+                                            discordTrigger.classList.add(
+                                                "roll-back"
+                                            );
+
+
+                                            setTimeout(
+                                                () => {
+
+                                                    discordTrigger.classList.remove(
+                                                        "roll-back"
+                                                    );
+
+                                                    discordBusy = false;
+
+                                                },
+                                                650
+                                            );
+
+                                        },
+                                        250
+                                    );
+
+                                },
+                                5000
                             );
 
-                            discordTrigger.classList.add(
-                                "roll-back"
-                            );
+                        }
 
-
-                            setTimeout(() => {
-
-                                discordTrigger.classList.remove(
-                                    "roll-back"
-                                );
-
-                                discordBusy = false;
-
-                            }, 650);
-
-
-                        }, 250);
-
-
-                    }, 5000);
-
-                }
-
-            }, 42);
+                    },
+                    42
+                );
 
         }
 
 
-        discordTrigger.addEventListener("click", () => {
+        discordTrigger.addEventListener(
+            "click",
+            () => {
 
-            if (discordBusy) {
-                return;
-            }
-
-
-            discordBusy = true;
-
-
-            discordTrigger.classList.add(
-                "hidden"
-            );
+                if (discordBusy) {
+                    return;
+                }
 
 
-            setTimeout(() => {
+                discordBusy = true;
 
-                discordTerminal.classList.add(
-                    "visible"
+
+                discordTrigger.classList.add(
+                    "hidden"
                 );
 
-                typeDiscordMessage();
 
-            }, 250);
+                setTimeout(
+                    () => {
 
-        });
+                        discordTerminal.classList.add(
+                            "visible"
+                        );
+
+                        typeDiscordMessage();
+
+                    },
+                    250
+                );
+
+            }
+        );
 
 
         document
             .querySelectorAll(".social-icon")
-            .forEach((image) => {
+            .forEach(
+                (image) => {
 
-                image.addEventListener(
-                    "error",
-                    () => {
+                    image.addEventListener(
+                        "error",
+                        () => {
 
-                        image.classList.add(
-                            "asset-missing"
-                        );
+                            image.classList.add(
+                                "asset-missing"
+                            );
 
-                    }
-                );
+                        }
+                    );
 
-            });
+                }
+            );
 
     </script>
+
 
 </body>
 
