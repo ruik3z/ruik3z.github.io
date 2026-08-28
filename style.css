@@ -4275,3 +4275,68 @@ and
     }
 
    }
+
+/* ============================================================
+   CHANNEL IMAGE VIEWER
+   ============================================================ */
+
+.channel-media {
+    cursor: zoom-in;
+}
+
+
+.channel-image-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.94);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .18s ease,
+        visibility .18s ease;
+}
+
+
+.channel-image-viewer.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.channel-image-viewer img {
+    display: block;
+
+    max-width: 96vw;
+
+    max-height: 94vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: zoom-out;
+
+    box-shadow:
+        0 0 60px rgba(0,0,0,.8);
+}
