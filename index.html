@@ -105,7 +105,6 @@
         aria-hidden="true"
     >
 
-
         <button
             class="channel-close"
             id="channel-close"
@@ -114,7 +113,6 @@
         >
             ×
         </button>
-
 
 
         <div class="channel-shell">
@@ -143,28 +141,37 @@
 
 
 
-            <div class="channel-feed">
+            <div
+                class="channel-feed"
+                id="channel-feed"
+            >
 
 
                 <!-- ==================================================
-                     NEW CHANNEL POST
+                     CHANNEL POSTS
 
-                     NEWEST POSTS GO FIRST.
+                     TELEGRAM STYLE:
+                     OLDEST POSTS ARE AT THE TOP.
+                     NEWEST POSTS ARE AT THE BOTTOM.
 
-                     COPY ONE ENTIRE channel-post ARTICLE
-                     WHEN YOU WANT TO ADD SOMETHING.
+                     WHEN YOU MAKE A NEW POST:
+                     COPY AN ENTIRE <article class="channel-post">
+                     AND PASTE IT AT THE VERY BOTTOM OF THIS LIST.
+
+                     THE CHANNEL AUTOMATICALLY OPENS SCROLLED
+                     TO THE NEWEST POST.
                      ================================================== -->
 
+
+                <!-- OLDEST -->
 
                 <article class="channel-post">
 
                     <time class="channel-time">
-                        28 AUG 2026 · 06:12
+                        28 AUG 2026 · 05:58
                     </time>
 
-                    <p class="channel-text">
-                        channel is alive.
-                    </p>
+                    <p class="channel-text">images and gifs are coming later.</p>
 
                 </article>
 
@@ -176,9 +183,7 @@
                         28 AUG 2026 · 06:07
                     </time>
 
-                    <p class="channel-text">
-                        random thoughts, life updates, obscure shit and whatever else i feel like putting here.
-                    </p>
+                    <p class="channel-text">random thoughts, life updates, obscure shit and whatever else i feel like putting here.</p>
 
                 </article>
 
@@ -187,14 +192,30 @@
                 <article class="channel-post">
 
                     <time class="channel-time">
-                        28 AUG 2026 · 05:58
+                        28 AUG 2026 · 06:12
                     </time>
 
-                    <p class="channel-text">
-                        images and gifs are coming later.
-                    </p>
+                    <p class="channel-text">channel is alive.</p>
 
                 </article>
+
+
+                <!-- ==================================================
+                     NEWEST POST GOES DIRECTLY ABOVE THIS COMMENT
+
+                     EXAMPLE:
+
+                     <article class="channel-post">
+
+                         <time class="channel-time">
+                             28 AUG 2026 · 06:50
+                         </time>
+
+                         <p class="channel-text">whatever you want to say</p>
+
+                     </article>
+
+                     ================================================== -->
 
 
             </div>
@@ -231,6 +252,17 @@
         const channelOverlay =
             document.getElementById("channel-overlay");
 
+        const channelFeed =
+            document.getElementById("channel-feed");
+
+
+        function scrollChannelToBottom() {
+
+            channelFeed.scrollTop =
+                channelFeed.scrollHeight;
+
+        }
+
 
         function openChannel() {
 
@@ -244,6 +276,15 @@
             document.body.classList.add(
                 "channel-active"
             );
+
+
+            requestAnimationFrame(() => {
+
+                requestAnimationFrame(() => {
+                    scrollChannelToBottom();
+                });
+
+            });
 
         }
 
