@@ -3717,3 +3717,228 @@ and
         transition-duration: .01ms !important;
     }
    }
+
+/* ============================================================
+   RANT CHANNEL
+   ============================================================ */
+
+.rant-page {
+    position: relative;
+
+    z-index: 3;
+
+    width: min(930px, 92%);
+
+    min-height: calc(100vh - 140px);
+
+    margin: 0 auto;
+
+    padding: 70px 0 90px;
+}
+
+
+.rant-room {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 30px 34px 38px;
+
+    font-family: var(--terminal);
+
+    background:
+        radial-gradient(
+            circle at 48% 12%,
+            rgba(110,120,140,.055),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 88% 74%,
+            rgba(75,80,100,.035),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(5,7,10,.98),
+            rgba(2,3,5,.99)
+        );
+
+    border:
+        1px solid rgba(215,220,230,.12);
+
+    box-shadow:
+        inset 0 0 90px rgba(255,255,255,.009),
+        0 0 60px rgba(0,0,0,.38);
+}
+
+
+.rant-room::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .12;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,.024) 4px
+        );
+}
+
+
+.rant-header {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding-bottom: 22px;
+
+    border-bottom:
+        1px solid rgba(215,220,230,.11);
+}
+
+
+.rant-host {
+    color: #b7bbc3;
+
+    font-size: .88rem;
+
+    letter-spacing: .035em;
+
+    text-shadow:
+        -1px 0 rgba(0,220,255,.08),
+        1px 0 rgba(255,30,90,.07);
+}
+
+
+.rant-status {
+    color: #5f646d;
+
+    font-size: .70rem;
+
+    letter-spacing: .12em;
+}
+
+
+.rant-feed {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.rant-entry {
+    padding: 29px 0 31px;
+
+    border-bottom:
+        1px solid rgba(215,220,230,.065);
+}
+
+
+.rant-entry:last-child {
+    border-bottom: none;
+}
+
+
+.rant-date {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: #626772;
+
+    font-size: .76rem;
+
+    letter-spacing: .065em;
+}
+
+
+.rant-message {
+    max-width: 760px;
+
+    color: #afb3bb;
+
+    font-family: var(--terminal);
+
+    font-size:
+        clamp(.92rem,2vw,1.02rem);
+
+    line-height: 1.82;
+
+    white-space: pre-wrap;
+}
+
+
+.rant-message::before {
+    content: "> ";
+
+    color: #757a84;
+}
+
+
+.rant-entry:hover .rant-message {
+    color: #c3c6cc;
+}
+
+
+.rant-entry:hover .rant-date {
+    color: #858a94;
+}
+
+
+/* ============================================================
+   RANT CHANNEL — MOBILE
+   ============================================================ */
+
+@media
+(max-width: 780px) {
+
+    .rant-page {
+        width: min(94%,760px);
+
+        padding: 46px 0 70px;
+    }
+
+
+    .rant-room {
+        padding: 24px 20px 30px;
+    }
+
+
+    .rant-header {
+        gap: 15px;
+    }
+
+
+    .rant-host {
+        font-size: .78rem;
+    }
+
+
+    .rant-status {
+        font-size: .62rem;
+    }
+
+
+    .rant-entry {
+        padding: 25px 0 28px;
+    }
+
+}
