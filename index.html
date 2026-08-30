@@ -404,45 +404,34 @@ pass the time it's like meditation or some shit. massive L on my part we finna d
            OPEN CHANNEL
            ========================================================== */
 
-        function openChannel() {
+function openChannel() {
 
-            /*
-                IMPORTANT:
+    document.body.classList.add(
+        "channel-active"
+    );
 
-                Add channel-active BEFORE opening the overlay.
+    channelOverlay.classList.add(
+        "open"
+    );
 
-                Your CSS patch disables the animated body filter
-                while the channel is active. This prevents the fixed
-                fullscreen overlay from inheriting the homepage's
-                current scroll position.
-            */
-
-            document.body.classList.add(
-                "channel-active"
-            );
+    channelOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+    );
 
 
-            channelOverlay.classList.add(
-                "open"
-            );
+    requestAnimationFrame(() => {
 
+        requestAnimationFrame(() => {
 
-            channelOverlay.setAttribute(
-                "aria-hidden",
-                "false"
-            );
+            channelFeed.scrollTop =
+                channelFeed.scrollHeight;
 
+        });
 
-            /*
-                Start the CHANNEL itself at the top.
+    });
 
-                This has nothing to do with wherever the homepage
-                was scrolled before opening it.
-            */
-
-            channelFeed.scrollTop = 0;
-
-        }
+}
 
 
 
