@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Ruikez</title>
 
-    <link rel="stylesheet" href="/style.css">
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
 </head>
+
 
 <body>
 
     <div class="noise"></div>
 
 
+
+    <!-- ============================================================
+         NAVBAR
+         ============================================================ -->
+
     <nav class="navbar">
 
-        <a href="/" class="logo">RUIKEZ</a>
+        <a
+            href="/"
+            class="logo"
+        >
+            RUIKEZ
+        </a>
+
 
         <div class="nav-links">
-            <a href="/" class="active">Home</a>
-            <a href="/blog/">Blog</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
+
+            <a
+                href="/"
+                class="active"
+            >
+                Home
+            </a>
+
+            <a href="/blog/">
+                Blog
+            </a>
+
+            <a href="/about/">
+                About
+            </a>
+
+            <a href="/contact/">
+                Contact
+            </a>
+
         </div>
 
     </nav>
 
+
+
+    <!-- ============================================================
+         HOME
+         ============================================================ -->
 
     <main class="hero hero-centered">
 
@@ -73,9 +114,15 @@
         </section>
 
 
+
         <section class="home-image">
 
-            <video autoplay muted loop playsinline>
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+            >
 
                 <source
                     src="/assets/ruikez-home.mp4"
@@ -87,6 +134,7 @@
         </section>
 
     </main>
+
 
 
     <footer>
@@ -115,8 +163,13 @@
         </button>
 
 
+
         <div class="channel-shell">
 
+
+            <!-- ====================================================
+                 CHANNEL HEADER
+                 ==================================================== -->
 
             <header class="channel-header">
 
@@ -141,29 +194,25 @@
 
 
 
+            <!-- ====================================================
+                 CHANNEL POSTS
+                 ==================================================== -->
+
             <div
                 class="channel-feed"
                 id="channel-feed"
             >
 
 
-                <!-- ==================================================
-                     CHANNEL POSTS
+                <!--
+                    POSTS ARE CHRONOLOGICAL.
 
-                     TELEGRAM STYLE:
-                     OLDEST POSTS ARE AT THE TOP.
-                     NEWEST POSTS ARE AT THE BOTTOM.
+                    OLDEST = TOP
+                    NEWEST = BOTTOM
 
-                     WHEN YOU MAKE A NEW POST:
-                     COPY AN ENTIRE <article class="channel-post">
-                     AND PASTE IT AT THE VERY BOTTOM OF THIS LIST.
+                    EVERY NEW POST GOES UNDER THE PREVIOUS ONE.
+                -->
 
-                     THE CHANNEL AUTOMATICALLY OPENS SCROLLED
-                     TO THE NEWEST POST.
-                     ================================================== -->
-
-
-                <!-- OLDEST -->
 
                 <article class="channel-post">
 
@@ -198,17 +247,16 @@
                     <p class="channel-text">channel's up baby i also figured out the gif bs i could post em here now. bery kewl</p>
 
                     <img
-        class="channel-media"
-        src="/assets/channel/thumbs-up.jpg"
-        alt=""
-        onclick="openChannelImage(this)"
-    >
-                    
+                        class="channel-media"
+                        src="/assets/channel/thumbs-up.jpg"
+                        alt=""
+                        onclick="openChannelImage(this)"
+                    >
+
                 </article>
 
-                
 
-                
+
                 <article class="channel-post">
 
                     <time class="channel-time">
@@ -216,75 +264,77 @@
                     </time>
 
                     <p class="channel-text">it's half past 3 am and im walking back home and this bloke asks me to call a taxi
-                    for him and i kid you not this mf pulls out some decrepit samsung s7 nightmare edition brick telling me he's got
-                    no juice left. that thing looked like one of those first ever samsung blueprints they ever made while they were
-                    racingit it up with apple in 2011 holy cow. taxi took 35 min to arrive and i just score talk with the dude.
-                    dude brings up fitness and turns out to have the biggest biceps and most shredded abs ive seen on a 40 year old ts mofo doesnt work out and he's lookin like
-                    a charming lick istg late gen x have got to be some of the most diabolical breeds out there. only thing i didnt particularly
-                    like about said bloke is that the he asked literally every passing living creature if they had ciggies. hope he
-                    quits smokin cuz goddamn he honestly has a healthier body than most eighteen year olds out there. to be fair evb
-                    that age in england has some sort of mutation stat that grants them power in some sort of category lmao</p>
+for him and i kid you not this mf pulls out some decrepit samsung s7 nightmare edition brick telling me he's got
+no juice left. that thing looked like one of those first ever samsung blueprints they ever made while they were
+racingit it up with apple in 2011 holy cow. taxi took 35 min to arrive and i just score talk with the dude.
+dude brings up fitness and turns out to have the biggest biceps and most shredded abs ive seen on a 40 year old ts mofo doesnt work out and he's lookin like
+a charming lick istg late gen x have got to be some of the most diabolical breeds out there. only thing i didnt particularly
+like about said bloke is that the he asked literally every passing living creature if they had ciggies. hope he
+quits smokin cuz goddamn he honestly has a healthier body than most eighteen year olds out there. to be fair evb
+that age in england has some sort of mutation stat that grants them power in some sort of category lmao</p>
 
                 </article>
 
 
-                                <article class="channel-post">
+
+                <article class="channel-post">
 
                     <time class="channel-time">
                         29 AUG 2026 · 06:59
                     </time>
 
                     <p class="channel-text">i bought so much robux that the fucking anti fraud commision contacted me and i had to explain
-                     how the cash trail revolved around my roblox spending habits and that id use my account just to grab myself some online treat.
-                        hope this goes well and they unfreeze my account 🙏💀🤚</p>
-                                </article>
+how the cash trail revolved around my roblox spending habits and that id use my account just to grab myself some online treat.
+hope this goes well and they unfreeze my account</p>
+
+                          <img
+                        class="channel-media"
+                        src="/assets/channel/hell-nah.jpg"
+                        alt=""
+                        onclick="openChannelImage(this)"
+                    >
+
+                </article>
 
 
-                             <article class="channel-post">
+
+                <article class="channel-post">
 
                     <time class="channel-time">
                         30 AUG 2026 · 18:33
                     </time>
 
                     <p class="channel-text">i got fucking banned from roblox for making a stupid obscure dark joke and putting it on the shirt. permanently.
-                    wasn't evening directed towards anyone or anything but i guess their crappy AI scans a single discriminate word and then immediately goes
-                    berserk. my little brother got banned too for absolutely no fucking reason either, he didn't even have anything to do with it, and i never
-                    used his account to evade bans either. i also made sure our emails are different so what the fuck happened? ill do what i can to get my brother's
-                    account back because he 100% didn't do anything. as for me though, it's wraps. i do have a backup identity that i haven't used in a while but i
-                    guess that'll work. goddamnit. roblox is such a shite and dysfunctional game and yet i still play it because it's honestly a pretty nice way to
-                    pass the time it's like meditation or some shit. massive L on my part we finna diverge to some other degenerate game if roblox is out the books</p>
+wasn't evening directed towards anyone or anything but i guess their crappy AI scans a single discriminate word and then immediately goes
+berserk. my little brother got banned too for absolutely no fucking reason either, he didn't even have anything to do with it, and i never
+used his account to evade bans either. i also made sure our emails are different so what the fuck happened? ill do what i can to get my brother's
+account back because he 100% didn't do anything. as for me though, it's wraps. i do have a backup identity that i haven't used in a while but i
+guess that'll work. goddamnit. roblox is such a shite and dysfunctional game and yet i still play it because it's honestly a pretty nice way to
+pass the time it's like meditation or some shit. massive L on my part we finna diverge to some other degenerate game if roblox is out the books</p>
 
-                                     <img
-        class="channel-media"
-        src="/assets/channel/oh-no.jpg"
-        alt=""
-        onclick="openChannelImage(this)"
-                                         
-                                </article>
+                    <img
+                        class="channel-media"
+                        src="/assets/channel/oh-no.jpg"
+                        alt=""
+                        onclick="openChannelImage(this)"
+                    >
 
-                
+                </article>
+
+
 
                 <!-- ==================================================
                      NEWEST POST GOES DIRECTLY ABOVE THIS COMMENT
-
-                     EXAMPLE:
-
-                     <article class="channel-post">
-
-                         <time class="channel-time">
-                             28 AUG 2026 · 06:50
-                         </time>
-
-                         <p class="channel-text">whatever you want to say</p>
-
-                     </article>
-
                      ================================================== -->
 
 
             </div>
 
 
+
+            <!-- ====================================================
+                 BOTTOM TERMINAL
+                 ==================================================== -->
 
             <div class="channel-terminal">
 
@@ -298,24 +348,35 @@
 
             </div>
 
-
         </div>
 
     </section>
 
-<div
-    class="channel-image-viewer"
-    id="channel-image-viewer"
-    onclick="closeChannelImage()"
->
 
-    <img
-        id="channel-image-full"
-        src=""
-        alt=""
+
+    <!-- ============================================================
+         FULLSCREEN IMAGE VIEWER
+         ============================================================ -->
+
+    <div
+        class="channel-image-viewer"
+        id="channel-image-viewer"
+        onclick="closeChannelImage()"
     >
 
-</div>
+        <img
+            id="channel-image-full"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+
+
+    <!-- ============================================================
+         CHANNEL JAVASCRIPT
+         ============================================================ -->
 
     <script>
 
@@ -331,48 +392,83 @@
         const channelFeed =
             document.getElementById("channel-feed");
 
+        const channelImageViewer =
+            document.getElementById("channel-image-viewer");
 
-        function scrollChannelToBottom() {
+        const channelImageFull =
+            document.getElementById("channel-image-full");
 
-            channelFeed.scrollTop =
-                channelFeed.scrollHeight;
 
-        }
 
+        /* ==========================================================
+           OPEN CHANNEL
+           ========================================================== */
 
         function openChannel() {
 
-            channelOverlay.classList.add("open");
+            /*
+                IMPORTANT:
 
-            channelOverlay.setAttribute(
-                "aria-hidden",
-                "false"
-            );
+                Add channel-active BEFORE opening the overlay.
+
+                Your CSS patch disables the animated body filter
+                while the channel is active. This prevents the fixed
+                fullscreen overlay from inheriting the homepage's
+                current scroll position.
+            */
 
             document.body.classList.add(
                 "channel-active"
             );
 
 
-            requestAnimationFrame(() => {
+            channelOverlay.classList.add(
+                "open"
+            );
 
-                requestAnimationFrame(() => {
-                    scrollChannelToBottom();
-                });
 
-            });
+            channelOverlay.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            /*
+                Start the CHANNEL itself at the top.
+
+                This has nothing to do with wherever the homepage
+                was scrolled before opening it.
+            */
+
+            channelFeed.scrollTop = 0;
 
         }
 
 
+
+        /* ==========================================================
+           CLOSE CHANNEL
+           ========================================================== */
+
         function closeChannel() {
 
-            channelOverlay.classList.remove("open");
+            /*
+                If an image happens to be open, close it first.
+            */
+
+            closeChannelImage();
+
+
+            channelOverlay.classList.remove(
+                "open"
+            );
+
 
             channelOverlay.setAttribute(
                 "aria-hidden",
                 "true"
             );
+
 
             document.body.classList.remove(
                 "channel-active"
@@ -381,11 +477,21 @@
         }
 
 
+
+        /* ==========================================================
+           CHANNEL BUTTON
+           ========================================================== */
+
         channelOpen.addEventListener(
             "click",
             openChannel
         );
 
+
+
+        /* ==========================================================
+           CHANNEL CLOSE BUTTON
+           ========================================================== */
 
         channelClose.addEventListener(
             "click",
@@ -393,44 +499,81 @@
         );
 
 
+
+        /* ==========================================================
+           IMAGE VIEWER
+           ========================================================== */
+
+        function openChannelImage(image) {
+
+            channelImageFull.src =
+                image.src;
+
+
+            channelImageViewer.classList.add(
+                "open"
+            );
+
+        }
+
+
+
+        function closeChannelImage() {
+
+            channelImageViewer.classList.remove(
+                "open"
+            );
+
+
+            channelImageFull.src =
+                "";
+
+        }
+
+
+
+        /* ==========================================================
+           ESCAPE KEY
+           ========================================================== */
+
         document.addEventListener(
             "keydown",
             (event) => {
 
+                if (event.key !== "Escape") {
+                    return;
+                }
+
+
+                /*
+                    Escape closes the image first.
+                */
+
                 if (
-                    event.key === "Escape" &&
+                    channelImageViewer.classList.contains("open")
+                ) {
+
+                    closeChannelImage();
+
+                    return;
+
+                }
+
+
+                /*
+                    Otherwise Escape closes the channel.
+                */
+
+                if (
                     channelOverlay.classList.contains("open")
                 ) {
+
                     closeChannel();
+
                 }
 
             }
         );
-function openChannelImage(image) {
-
-    const viewer =
-        document.getElementById("channel-image-viewer");
-
-    const fullImage =
-        document.getElementById("channel-image-full");
-
-    fullImage.src =
-        image.src;
-
-    viewer.classList.add("open");
-
-}
-
-
-function closeChannelImage() {
-
-    const viewer =
-        document.getElementById("channel-image-viewer");
-
-    viewer.classList.remove("open");
-
-}
-        
 
     </script>
 
